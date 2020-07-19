@@ -20,7 +20,7 @@ First, add this line into your root build.gradle :
 Then add the dependency into your app build.gradle :
 
 	dependencies {
-	        implementation 'com.github.Sildian:CircularSlider-Android:Tag'
+	        implementation 'com.github.Sildian:CircularSlider-Android:1.1.0'
 	}
 
 That's it ! You can now user the Circular Slider into your project.
