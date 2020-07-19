@@ -337,7 +337,7 @@ class CircularSlider(context:Context, attrs:AttributeSet) : View(context, attrs)
 
     /**Gesture detector**/
 
-    inner class GestureListener:GestureDetector.SimpleOnGestureListener(){
+    private inner class GestureListener:GestureDetector.SimpleOnGestureListener(){
         override fun onDown(e: MotionEvent?): Boolean {
             return true
         }
