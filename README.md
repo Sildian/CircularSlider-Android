@@ -97,15 +97,15 @@ Then set an instance of your class as 'valueFormatter' of the 'circularSlider'.
 
 ### All attributes
 
-| minValue | integer |
-| maxValue | integer |
-| currentValue | integer |
-| stepValue | integer |
-| showValueText | boolean |
-| sliderWidth | dimension |
-| sliderColor | color |
-| valueTextSize | dimension |
-| valueTextColor | color |
+- minValue : integer
+- maxValue : integer
+- currentValue : integer
+- stepValue : integer
+- showValueText : boolean
+- sliderWidth : dimension
+- sliderColor : color
+- valueTextSize : dimension
+- valueTextColor : color
 
 All attributes can be set in xml or in code.
 
