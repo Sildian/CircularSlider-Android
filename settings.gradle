@@ -1,0 +1,3 @@
+include ':CircularSliderLibrary'
+include ':app'
+rootProject.name = "CircularSlider"

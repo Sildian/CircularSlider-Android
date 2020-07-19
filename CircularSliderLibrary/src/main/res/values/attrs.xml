@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircularSlider">
+        <attr name="minValue" format="integer"/>
+        <attr name="maxValue" format="integer"/>
+        <attr name="currentValue" format="integer"/>
+        <attr name="stepValue" format="integer"/>
+        <attr name="showValueText" format="boolean"/>
+        <attr name="sliderWidth" format="dimension"/>
+        <attr name="sliderColor" format="color"/>
+        <attr name="valueTextSize" format="dimension"/>
+        <attr name="valueTextColor" format="color"/>
+    </declare-styleable>
+</resources>
