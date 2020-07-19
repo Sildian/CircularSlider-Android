@@ -95,7 +95,7 @@ class CircularSlider(context:Context, attrs:AttributeSet) : View(context, attrs)
         context.theme.obtainStyledAttributes(attrs, R.styleable.CircularSlider, 0, 0).apply{
             minValue=getInteger(R.styleable.CircularSlider_minValue, 0)
             maxValue=getInteger(R.styleable.CircularSlider_maxValue, 100)
-            currentValue=getInteger(R.styleable.CircularSlider_currentValue, 0)
+            currentValue=getInteger(R.styleable.CircularSlider_currentValue, minValue)
             stepValue=getInteger(R.styleable.CircularSlider_stepValue, 1)
             showValueText=getBoolean(R.styleable.CircularSlider_showValueText, true)
             setSliderWidth(getDimension(R.styleable.CircularSlider_sliderWidth, 5f))
@@ -240,11 +240,12 @@ class CircularSlider(context:Context, attrs:AttributeSet) : View(context, attrs)
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
 
-        val minPadding = TypedValue.applyDimension(
+        val minPadding = (TypedValue.applyDimension(
             TypedValue.COMPLEX_UNIT_DIP,
             1f,
             context.resources.displayMetrics
-        ).toInt()
+        ) * this.sliderWidth)
+            .toInt()
 
         setPadding(
             if(paddingLeft==0) minPadding else paddingLeft,
