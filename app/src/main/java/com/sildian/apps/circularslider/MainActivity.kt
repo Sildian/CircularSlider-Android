@@ -19,13 +19,15 @@ class MainActivity : AppCompatActivity() {
         circularSlider.valueFormatter = CurrencyFormatter()
 
         circularSlider.addOnValueChangedListener { view, value ->
-            Toast.makeText(this, value.toString(), Toast.LENGTH_SHORT).show()
+            //Do something
         }
     }
 
     private class CurrencyFormatter: ValueFormatter {
 
-        override fun formatValue(value: Int, context: Context?): String =
-            NumberFormat.getCurrencyInstance(Locale.UK).format(value)
+        override fun formatValue(value: Int, context: Context?): String {
+            //Return a string, for instance :
+            return NumberFormat.getCurrencyInstance(Locale.UK).format(value)
+        }
     }
 }

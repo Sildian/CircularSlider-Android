@@ -20,7 +20,7 @@ First, add this line into your root build.gradle :
 Then add the dependency into your app build.gradle :
 
 	dependencies {
-	        implementation 'com.github.Sildian:CircularSlider-Android:1.1.0'
+	        implementation 'com.github.Sildian:CircularSlider-Android:1.0.0'
 	}
 
 That's it ! You can now user the Circular Slider into your project. Just write this code into your layout :
@@ -73,7 +73,7 @@ Let's go further ! Set a min and max value, as well as a step value :
 
 #### Format values to display
 
-I guess you realized that in this sample the value text is formatted. How can we do that ? In the Main Activity.
+I guess you realized that in this sample the value text is formatted. How can we do that ? In the activity / fragment.
 First, create a class implementing 'ValueFormatter' and override 'formatValue'.
 Then set an instance of your class as 'valueFormatter' of the 'circularSlider'.
 
@@ -103,7 +103,7 @@ Now if you need to listen the value change event, you can add a callback :
 
     circularSlider.addOnValueChangedListener { view, value ->
             //Do something
-     }
+    }
 
 ### All attributes
 
