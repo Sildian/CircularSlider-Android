@@ -34,8 +34,7 @@
             app:sliderColor="@color/colorPrimary"
             app:sliderWidth="8dp"
             app:valueTextColor="@color/colorPrimaryDark"
-            app:valueTextSize="22sp"
-            app:currentValue="50"/>
+            app:valueTextSize="22sp"/>
 
         <com.sildian.apps.circularsliderlibrary.CircularSlider
             android:id="@+id/activity_main_circular_slider_3"

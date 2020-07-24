@@ -23,13 +23,7 @@ Then add the dependency into your app build.gradle :
 	        implementation 'com.github.Sildian:CircularSlider-Android:1.1.0'
 	}
 
-That's it ! You can now user the Circular Slider into your project.
-
-## Use it
-
-### Sample 1
-
-Really easy ! To create a simple sample like the one shown above, just write this code into your layout :
+That's it ! You can now user the Circular Slider into your project. Just write this code into your layout :
 
     <com.sildian.apps.circularsliderlibrary.CircularSlider
         android:id="@+id/activity_main_circular_slider_1"
@@ -37,9 +31,11 @@ Really easy ! To create a simple sample like the one shown above, just write thi
         android:layout_height="wrap_content"
         android:layout_margin="16dp"/>
 
-### Sample 2
+## Advanced use cases
 
-You want to change the size, the colour, or set a starting value ? No problem :
+### Change color and size
+
+Really easy, look at the sample below :
 
 ![alt text](sample_2.png)
 
@@ -52,10 +48,11 @@ You want to change the size, the colour, or set a starting value ? No problem :
         app:sliderColor="@color/colorPrimary"
         app:sliderWidth="8dp"
         app:valueTextColor="@color/colorPrimaryDark"
-        app:valueTextSize="22sp"
-        app:currentValue="50"/>
+        app:valueTextSize="22sp"/>
 
-### Sample 3
+### Monitor values
+
+#### Set values
 
 Let's go further ! Set a min and max value, as well as a step value :
 
@@ -74,6 +71,8 @@ Let's go further ! Set a min and max value, as well as a step value :
         app:maxValue="1000"
         app:stepValue="100"/>
 
+#### Format values to display
+
 I guess you realized that in this sample the value text is formatted. How can we do that ? In the Main Activity.
 First, create a class implementing 'ValueFormatter' and override 'formatValue'.
 Then set an instance of your class as 'valueFormatter' of the 'circularSlider'.
@@ -81,19 +80,30 @@ Then set an instance of your class as 'valueFormatter' of the 'circularSlider'.
 	class MainActivity : AppCompatActivity() {
 
     	override fun onCreate(savedInstanceState: Bundle?) {
-        	super.onCreate(savedInstanceState)
-        	setContentView(R.layout.activity_main)
 
-	        val circularSlider = activity_main_circular_slider_3
-      	  circularSlider.valueFormatter = CurrencyFormatter()
+        	    super.onCreate(savedInstanceState)
+        	    setContentView(R.layout.activity_main)
+
+	            val circularSlider = activity_main_circular_slider_3
+      	        circularSlider.valueFormatter = CurrencyFormatter()
     	}
 
-	    private class CurrencyFormatter: ValueFormatter {
+	        private class CurrencyFormatter: ValueFormatter {
 
-    	    override fun formatValue(value: Int, context: Context?): String =
-        	    NumberFormat.getCurrencyInstance(Locale.UK).format(value)
-	    }
+    	        override fun formatValue(value: Int, context: Context?): String {
+    	                //Return a string, for instance :
+        	                NumberFormat.getCurrencyInstance(Locale.UK).format(value)
+        	    }
+	        }
 	}
+
+#### Listen to value change event
+
+Now if you need to listen the value change event, you can add a callback :
+
+    circularSlider.addOnValueChangedListener { view, value ->
+            //Do something
+     }
 
 ### All attributes
 
@@ -111,4 +121,3 @@ All attributes can be set in xml or in code.
 
 
 Hope you'll enjoy this library !
-
