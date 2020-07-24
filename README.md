@@ -92,7 +92,7 @@ Then set an instance of your class as 'valueFormatter' of the 'circularSlider'.
 
     	        override fun formatValue(value: Int, context: Context?): String {
     	                //Return a string, for instance :
-        	                NumberFormat.getCurrencyInstance(Locale.UK).format(value)
+        	                return NumberFormat.getCurrencyInstance(Locale.UK).format(value)
         	    }
 	        }
 	}
