@@ -240,19 +240,9 @@ class CircularSlider(context:Context, attrs:AttributeSet) : View(context, attrs)
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
 
-        val minPadding = (TypedValue.applyDimension(
-            TypedValue.COMPLEX_UNIT_DIP,
-            1f,
-            context.resources.displayMetrics
-        ) * this.sliderWidth)
-            .toInt()
+        val minPadding = ceil(this.sliderWidth / 2f).toInt()
 
-        setPadding(
-            if(paddingLeft==0) minPadding else paddingLeft,
-            if(paddingTop==0) minPadding else paddingTop,
-            if(paddingStart==0) minPadding else paddingStart,
-            if(paddingRight==0) minPadding else paddingRight
-        )
+        setPadding(minPadding, minPadding, minPadding, minPadding)
 
         val minw: Int = paddingLeft + paddingRight + suggestedMinimumWidth
         val w: Int = resolveSizeAndState(minw, widthMeasureSpec, 1)
